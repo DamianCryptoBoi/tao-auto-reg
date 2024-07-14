@@ -28,7 +28,7 @@ while True:
         print(f'{config["coldkey"]} - {config["hotkeys"][i]} registering...')
         wallet = bittensor.wallet(name=config["coldkey"],hotkey=config["hotkeys"][i])
         try:
-            if subtensor.burned_register( wallet = wallet, netuid = config["netuid"] ):
+            if subtensor.burned_register( wallet = wallet, netuid = config["netuid"],wait_for_finalization=False ):
                 if hotkey_states[i]:
                     continue
                 hotkey_states[i] = True
