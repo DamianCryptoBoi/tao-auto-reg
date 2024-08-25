@@ -19,7 +19,7 @@ async def send_telegram_message(message):
 config = read_json_from_file('config.json')
 trequest = HTTPXRequest(connection_pool_size=20)
 bot = Bot(token='7281318901:AAGOQr8SRDCd94LrOtdjObGqjU0YSQVBwQM', request=trequest)
-subtensor = bittensor.subtensor(network="finney")
+subtensor = bittensor.subtensor(network="local")
 
 hotkey_states = [False] * len(config["hotkeys"])
 
@@ -32,7 +32,7 @@ while True:
                 if hotkey_states[i]:
                     continue
                 hotkey_states[i] = True
-                message = f'{config["coldkey"]} - {config["hotkeys"][i]} registered successfully'
+                message = f'{config["coldkey"]} - {config["hotkeys"][i]} registered successfully on subnet {config["netuid"]}'
                 print(message)
                 asyncio.run(send_telegram_message(message=message))
             else:
