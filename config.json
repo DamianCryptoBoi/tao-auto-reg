@@ -1,5 +1,15 @@
 {
 	"coldkey": "ddz",
-	"hotkeys": ["ddz0", "ddz3", "ddz4", "ddz5", "ddz6", "ddz7", "ddz8"],
-	"netuid": 45
+	"hotkeys": [
+		"ddz0",
+		"ddz1",
+		"ddz2",
+		"ddz3",
+		"ddz4",
+		"ddz5",
+		"ddz6",
+		"ddz7",
+		"ddz8"
+	],
+	"netuid": 17
 }
